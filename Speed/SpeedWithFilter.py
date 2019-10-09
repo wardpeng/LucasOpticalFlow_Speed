@@ -58,13 +58,13 @@ def filterTest():
     pl.show()
 
 
-def GetSpeed():
+def GetSpeed(videoPath):
     t = 0
     speedResult=[]
     bRunning = True
     # cap=cv2.VideoCapture(0)
     # cap = cv2.VideoCapture('2.mov')
-    cap = cv2.VideoCapture('../Source/20190810-2-2.mov')
+    cap = cv2.VideoCapture(videoPath)
     feature_params = dict(maxCorners=100, qualityLevel=0.4, minDistance=7, blockSize=7)
     lk_params = dict(winSize=(15, 15), maxLevel=2, criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
     color = np.random.randint(0, 255, (100, 3))
@@ -196,6 +196,7 @@ def averageWithFilter(list):
 
 
 if __name__ == '__main__':
-    GetSpeed()
+    # GetSpeed('../Source/20190810-2-2.mov')
+    GetSpeed('../Source/20190810-2-2.mov')
     # filterTest()
     # myTest()
